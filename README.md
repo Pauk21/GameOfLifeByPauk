@@ -10,3 +10,6 @@ Enter to confirm selection / reset board
 Escape to go back
 
 Made by: Pauk
+
+
+If it says that "openal32.dll" is missing, it is located in the project folder or in the sfml/bin folder
