@@ -8,6 +8,7 @@ GameScreen::GameScreen()
 
 void GameScreen::Update(sf::RenderWindow& window)
 {
+
 	if (doRandomColor && !hasPixel) {
 		cell = pixel.doRandomColor();
 		hasPixel = true;
@@ -147,7 +148,7 @@ void GameScreen::moveRight()
 
 void GameScreen::moveUp()
 {
-	if (startI > 0)
+	if (startI > 9)
 		startI--;
 }
 

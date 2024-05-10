@@ -1,21 +1,25 @@
 #include "KeyboardMananger.h"
 
-std::string KeyboardMananger::checkForInput(sf::Event& event)
+std::string KeyboardMananger::checkForInput(sf::Event& event, bool disableSound)
 {
     if (event.key.code == sf::Keyboard::Left) {
-        playSound('L');
+        if (!disableSound)
+            playSound('L');
         return "LEFT";
     }
     if (event.key.code == sf::Keyboard::Right) {
-        playSound('R');
+        if (!disableSound)
+            playSound('R');
         return "RIGHT";
     }
     if (event.key.code == sf::Keyboard::Up) {
-        playSound('U');
+        if (!disableSound)
+            playSound('U');
         return "UP";
     }
     if (event.key.code == sf::Keyboard::Down) {
-        playSound('D');
+        if (!disableSound)
+            playSound('D');
         return "DOWN";
     }
     if (event.key.code == sf::Keyboard::Enter) {

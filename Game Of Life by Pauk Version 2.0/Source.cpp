@@ -40,7 +40,7 @@ int main() {
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed) window.close();
 			if (event.type == sf::Event::KeyPressed) // Ako je neki key stisnut pogledaj koji
-				optionSelected = MainMenu.KeyPressed(KeyboardManager.checkForInput(event));
+				optionSelected = MainMenu.KeyPressed(KeyboardManager.checkForInput(event, false));
 
 			switch (optionSelected)
 			{
@@ -52,7 +52,7 @@ int main() {
 						if (event.type == sf::Event::KeyPressed) {
 							if (event.key.code == sf::Keyboard::Enter)
 								GameScreen.resetBoard();
-							goBack = GameScreen.KeyPressed(KeyboardManager.checkForInput(event));
+							goBack = GameScreen.KeyPressed(KeyboardManager.checkForInput(event, true));
 						}
 					}
 					sf::Time elapsed = frameClock.getElapsedTime();
@@ -71,7 +71,7 @@ int main() {
 				while (!goBack) {
 					while (window.pollEvent(event)) {
 						if (event.type == sf::Event::KeyPressed)
-							goBack = OptionsMenu.KeyPressed(KeyboardManager.checkForInput(event), GameScreen);
+							goBack = OptionsMenu.KeyPressed(KeyboardManager.checkForInput(event, false), GameScreen);
 					}
 					window.clear();
 					OptionsMenu.draw(window);
@@ -85,7 +85,7 @@ int main() {
 				while (!goBack) {
 					while (window.pollEvent(event)) {
 						if (event.type == sf::Event::KeyPressed) // Ako je neki key stisnut pogledaj koji
-							goBack = AboutMenu.KeyPressed(KeyboardManager.checkForInput(event));
+							goBack = AboutMenu.KeyPressed(KeyboardManager.checkForInput(event, false));
 					}
 					window.clear();
 					AboutMenu.draw(window);

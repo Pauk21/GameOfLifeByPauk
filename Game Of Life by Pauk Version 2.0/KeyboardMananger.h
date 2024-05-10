@@ -9,7 +9,7 @@ private:
 	SoundManager soundManager;
 
 public:
-	std::string checkForInput(sf::Event& event);
+	std::string checkForInput(sf::Event& event, bool disableSound);
 	void playSound(char input);
 };
 
