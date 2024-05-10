@@ -6,6 +6,7 @@ is determined by its initial state,
 requiring no further input.
 
 Arrow keys to navigate / move along the board
+
 Enter to confirm selection / reset board
 Escape to go back
 
